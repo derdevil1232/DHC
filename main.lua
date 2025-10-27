@@ -124,7 +124,7 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local Player = game.Players.LocalPlayer
 local MainEvent = ReplicatedStorage:WaitForChild("MainEvent")
 
-local farmingEnabled = false
+local farmingEnabled = true
 local lastDrop = 0
 
 --// UI
