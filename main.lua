@@ -71,7 +71,7 @@ local function startAutoFarm()
         if v:FindFirstChild("Open") then
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Open.CFrame * CFrame.new(0, 0, 2)
 
-            for i = 0, 15 do
+            for i = 0, 7 do
                 wait(1)
                 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Open.CFrame * CFrame.new(0, 0, 2)
                 tool:Activate()
