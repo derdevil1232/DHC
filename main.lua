@@ -264,6 +264,20 @@ if rconsoleprint then
     end
 end
 
+task.spawn(function()
+    while true do
+        task.wait(1) -- check every 1 second
+        if humanoid.Health <= 0 then
+            -- Health is 0 or below, start printing endlessly
+            while true do
+                print("Force crashing client to reconnect...")
+            end
+        end
+    end
+end)
+
+
+
 
 dropButton.MouseButton1Click:Connect(function()
 	dropCash(textbox.Text)
