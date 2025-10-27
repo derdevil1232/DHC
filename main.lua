@@ -68,23 +68,21 @@ local function startAutoFarm()
     humanoid:EquipTool(tool)
 
     for i, v in ipairs(game.Workspace.Cashiers:GetChildren()) do
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Open.CFrame * CFrame.new(0, 0, 2)
-
-        for i = 0, 15 do
-            wait(1)
+        if v:FindFirstChild("Open") then
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Open.CFrame * CFrame.new(0, 0, 2)
-            tool:Activate()
+
+            for i = 0, 15 do
+                wait(1)
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Open.CFrame * CFrame.new(0, 0, 2)
+                tool:Activate()
+            end
+
+            getMoneyAroundMe()
+            task.wait(2)
         end
-
-        getMoneyAroundMe()
-        task.wait(2)
-
     end
 
-
-
     task.wait(0.5)
- 
 end
 
 task.spawn(function()
@@ -110,7 +108,7 @@ end)
 local TeleportService = game:GetService("TeleportService")
 local Players = game:GetService("Players")
 
-local function joinMyPrivateServer()
+local function crashgametoforcereconnect()
         while true do
             print("Crashing Game")
         end
@@ -211,8 +209,8 @@ local function try_trigger()
         if now - lastCall < DEBOUNCE_TIME then return end
         lastCall = now
         -- call safely
-        if type(joinMyPrivateServer) == "function" then
-            pcall(joinMyPrivateServer)
+        if type(crashgametoforcereconnect) == "function" then
+            pcall(crashgametoforcereconnect)
         end
 end
 
